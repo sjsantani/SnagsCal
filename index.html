@@ -25,174 +25,36 @@
     --border: rgba(0,0,0,0.1);
     --text: #1a1a18;
     --text-muted: #6b6b68;
-    --accent: #1a1a18;
   }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-  header {
-    text-align: center;
-    padding: 3rem 1rem 2rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-  }
+  header { text-align: center; padding: 3rem 1rem 2rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+  header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+  header p { font-size: 15px; color: var(--text-muted); }
+  .city-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
 
-  header h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 400;
-    letter-spacing: -0.5px;
-    margin-bottom: 0.5rem;
-  }
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 1.5rem; }
+  .tab { padding: 8px 18px; border-radius: 8px; border: 1px solid var(--border); background: transparent; cursor: pointer; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text-muted); transition: all 0.15s; }
+  .tab.active { background: var(--text); color: #fff; border-color: var(--text); }
 
-  header p {
-    font-size: 15px;
-    color: var(--text-muted);
-  }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem; }
+  .card-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 0.25rem; }
+  .card-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
 
-  .city-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-  }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1rem 4rem;
-  }
-
-  .tabs {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 1.5rem;
-  }
-
-  .tab {
-    padding: 8px 18px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: transparent;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text-muted);
-    transition: all 0.15s;
-  }
-
-  .tab.active {
-    background: var(--text);
-    color: #fff;
-    border-color: var(--text);
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .card-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-  }
-
-  .card-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-  }
-
-  .legend {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .cal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-
-  .cal-nav {
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 4px 12px;
-    cursor: pointer;
-    font-size: 16px;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.15s;
-  }
-
+  .cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .cal-nav { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 4px 12px; cursor: pointer; font-size: 16px; color: var(--text); font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
   .cal-nav:hover { background: var(--bg); }
+  .month-title { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; }
 
-  .month-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-  .cal-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-  }
-
-  .cal-day-label {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-muted);
-    padding: 4px 0;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-
-  .cal-day {
-    aspect-ratio: 1;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.12s;
-    font-family: 'DM Sans', sans-serif;
-  }
-
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .cal-day-label { text-align: center; font-size: 11px; color: var(--text-muted); padding: 4px 0; font-weight: 500; letter-spacing: 0.5px; }
+  .cal-day { aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; cursor: pointer; border: 1px solid transparent; transition: all 0.12s; font-family: 'DM Sans', sans-serif; }
   .cal-day.empty { cursor: default; }
   .cal-day.available { background: var(--green-light); color: var(--green-dark); }
   .cal-day.available:hover { border-color: var(--green-mid); }
@@ -203,126 +65,52 @@
   .cal-day.selected { box-shadow: inset 0 0 0 2px #185FA5; background: var(--blue-light); color: var(--blue-dark); }
 
   .form-group { margin-bottom: 1rem; }
-
-  label {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-  }
-
-  input, select {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
+  label { display: block; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+  input, select { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); outline: none; transition: border-color 0.15s; }
   input:focus, select:focus { border-color: var(--text); }
-
   .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-  .btn-primary {
-    background: var(--text);
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    width: 100%;
-    margin-top: 0.5rem;
-    transition: opacity 0.15s;
-  }
-
+  .btn-primary { background: var(--text); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; width: 100%; margin-top: 0.5rem; transition: opacity 0.15s; }
   .btn-primary:hover { opacity: 0.85; }
   .btn-primary:disabled { opacity: 0.35; cursor: default; }
 
-  .selected-date-pill {
-    display: inline-block;
-    font-size: 13px;
-    padding: 6px 14px;
-    background: var(--blue-light);
-    color: var(--blue-dark);
-    border-radius: 99px;
-    margin-bottom: 1.25rem;
-    font-weight: 500;
-  }
+  .btn-ghost { background: transparent; border: 1px solid var(--border); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text-muted); width: 100%; margin-top: 8px; transition: all 0.15s; }
+  .btn-ghost:hover { background: var(--bg); }
+
+  .selected-date-pill { display: inline-block; font-size: 13px; padding: 6px 14px; background: var(--blue-light); color: var(--blue-dark); border-radius: 99px; margin-bottom: 1.25rem; font-weight: 500; }
 
   .msg { font-size: 13px; text-align: center; margin-top: 10px; }
   .msg-success { color: var(--green-dark); }
   .msg-error { color: var(--red-dark); }
 
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    padding: 2px 10px;
-    border-radius: 99px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-  }
-
+  .badge { display: inline-block; font-size: 11px; padding: 2px 10px; border-radius: 99px; font-weight: 500; }
   .badge-pending { background: var(--amber-light); color: var(--amber-dark); }
   .badge-approved { background: var(--green-light); color: var(--green-dark); }
   .badge-declined { background: var(--red-light); color: var(--red-dark); }
 
-  .request-row {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
+  .request-row { border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
   .request-row:last-child { border-bottom: none; }
-
   .req-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
   .req-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
-
   .req-actions { display: flex; gap: 6px; flex-shrink: 0; }
-
-  .btn-sm {
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    cursor: pointer;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.12s;
-  }
-
+  .btn-sm { padding: 5px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text); font-family: 'DM Sans', sans-serif; transition: all 0.12s; }
   .btn-approve { border-color: #3B6D11; color: #3B6D11; }
   .btn-approve:hover { background: var(--green-light); }
   .btn-decline { border-color: #A32D2D; color: #A32D2D; }
   .btn-decline:hover { background: var(--red-light); }
 
-  .notice {
-    font-size: 13px;
-    color: var(--text-muted);
-    text-align: center;
-    padding: 2rem 0;
-  }
+  .notice { font-size: 13px; color: var(--text-muted); text-align: center; padding: 2rem 0; }
+  .loading-bar { font-size: 13px; color: var(--text-muted); text-align: center; padding: 1.5rem 0; }
 
-  .loading-bar {
-    font-size: 13px;
-    color: var(--text-muted);
-    text-align: center;
-    padding: 1.5rem 0;
-  }
+  .admin-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+  .logout-btn { font-size: 12px; color: var(--text-muted); background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 4px 12px; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
+  .logout-btn:hover { color: var(--red-dark); border-color: var(--red-dark); }
+
+  /* Modal */
+  .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 1rem; }
+  .modal { background: var(--surface); border-radius: 16px; padding: 2rem; width: 100%; max-width: 360px; border: 1px solid var(--border); }
+  .modal-title { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 0.35rem; }
+  .modal-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; }
 
   @media (max-width: 480px) {
     .row2 { grid-template-columns: 1fr; }
@@ -334,14 +122,15 @@
 
 <header>
   <div class="city-tag">New York City</div>
-  <h1>Come visit me in NYC</h1>
-  <p>Pick a date, send your request — I'll confirm via text.</p>
+  <h1>Come visit SNAGS in NYC</h1>
+  <p>Pick a date, send your request and We'll confirm via text.</p>
 </header>
 
 <div class="container">
   <div class="tabs">
-    <button class="tab active" onclick="showTab('calendar')">Book a visit</button>
-    <button class="tab" onclick="showTab('admin')">Admin</button>
+    <button class="tab active" id="tab-btn-calendar" onclick="showTab('calendar')">Book a visit</button>
+    <button class="tab" id="tab-btn-login" onclick="showLoginModal()">Admin login</button>
+    <button class="tab" id="tab-btn-admin" onclick="showTab('admin')" style="display:none;">Admin</button>
   </div>
 
   <div id="tab-calendar">
@@ -360,7 +149,6 @@
       <div id="cal-loading" class="loading-bar">Loading calendar...</div>
       <div class="cal-grid" id="cal-grid"></div>
     </div>
-
     <div class="card">
       <div class="card-title">Request a visit</div>
       <div class="card-sub">Fill in your details and I'll text you to confirm.</div>
@@ -391,6 +179,10 @@
   </div>
 
   <div id="tab-admin" style="display:none;">
+    <div class="admin-bar">
+      <span style="font-size:13px; color:var(--text-muted);">Logged in as admin</span>
+      <button class="logout-btn" onclick="logout()">Log out</button>
+    </div>
     <div class="card">
       <div class="card-title">Incoming requests</div>
       <div class="card-sub">Approve or decline visitor requests below.</div>
@@ -403,15 +195,31 @@
         <label>Date to block</label>
         <input type="date" id="unavail-date" />
       </div>
-      <button class="btn-primary" style="width:auto; padding: 10px 20px;" onclick="addUnavailable()">Block this date</button>
+      <button class="btn-primary" style="width:auto; padding:10px 20px;" onclick="addUnavailable()">Block this date</button>
       <div id="block-msg" class="msg"></div>
     </div>
+  </div>
+</div>
+
+<!-- Login modal -->
+<div class="modal-bg" id="login-modal" style="display:none;">
+  <div class="modal">
+    <div class="modal-title">Admin login</div>
+    <div class="modal-sub">Enter your phone number to access the admin panel.</div>
+    <div class="form-group">
+      <label>Phone number</label>
+      <input type="tel" id="login-phone" placeholder="Your phone number" />
+    </div>
+    <button class="btn-primary" onclick="attemptLogin()">Continue</button>
+    <button class="btn-ghost" onclick="hideLoginModal()">Cancel</button>
+    <div id="login-msg" class="msg"></div>
   </div>
 </div>
 
 <script>
 const SUPABASE_URL = 'https://gssfvppvixwarmrdinlh.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdzc2Z2cHB2aXh3YXJtcmRpbmxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzMDM2ODgsImV4cCI6MjA4OTg3OTY4OH0.MwbVo5w6KLvJwK7O5dbCdrmKD_Yy6uqz_GOmCer25Vg';
+const ADMIN_PHONE = '8329662100';
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const DAYS = ['Su','Mo','Tu','We','Th','Fr','Sa'];
 
@@ -419,19 +227,49 @@ let now = new Date();
 let viewYear = now.getFullYear();
 let viewMonth = now.getMonth();
 let selectedDate = null;
-let unavailableDates = [];
-let bookedDates = [];
-let pendingDates = [];
+let unavailableDates = [], bookedDates = [], pendingDates = [];
+let isAdmin = false;
+
+function normalizePhone(p) { return p.replace(/\D/g, ''); }
+
+function showLoginModal() {
+  document.getElementById('login-modal').style.display = 'flex';
+  setTimeout(() => document.getElementById('login-phone').focus(), 50);
+}
+
+function hideLoginModal() {
+  document.getElementById('login-modal').style.display = 'none';
+  document.getElementById('login-msg').textContent = '';
+  document.getElementById('login-phone').value = '';
+}
+
+function attemptLogin() {
+  const entered = normalizePhone(document.getElementById('login-phone').value);
+  const msg = document.getElementById('login-msg');
+  if (entered === normalizePhone(ADMIN_PHONE)) {
+    isAdmin = true;
+    hideLoginModal();
+    document.getElementById('tab-btn-login').style.display = 'none';
+    document.getElementById('tab-btn-admin').style.display = '';
+    showTab('admin');
+  } else {
+    msg.className = 'msg msg-error';
+    msg.textContent = 'Incorrect phone number. Try again.';
+  }
+}
+
+function logout() {
+  isAdmin = false;
+  document.getElementById('tab-btn-admin').style.display = 'none';
+  document.getElementById('tab-btn-login').style.display = '';
+  showTab('calendar');
+}
+
+document.getElementById('login-phone').addEventListener('keydown', e => { if (e.key === 'Enter') attemptLogin(); });
 
 async function sb(path, options = {}) {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`,
-      'Content-Type': 'application/json',
-      'Prefer': options.prefer || 'return=representation',
-      ...options.headers
-    },
+    headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json', 'Prefer': options.prefer || 'return=representation', ...options.headers },
     method: options.method || 'GET',
     body: options.body ? JSON.stringify(options.body) : undefined
   });
@@ -442,10 +280,7 @@ async function sb(path, options = {}) {
 
 async function loadData() {
   try {
-    const [unavail, requests] = await Promise.all([
-      sb('unavailable_dates?select=date'),
-      sb('requests?select=date,status')
-    ]);
+    const [unavail, requests] = await Promise.all([sb('unavailable_dates?select=date'), sb('requests?select=date,status')]);
     unavailableDates = unavail.map(r => r.date);
     bookedDates = requests.filter(r => r.status === 'approved').map(r => r.date);
     pendingDates = requests.filter(r => r.status === 'pending').map(r => r.date);
@@ -456,9 +291,7 @@ async function loadData() {
   }
 }
 
-function dateKey(y, m, d) {
-  return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-}
+function dateKey(y, m, d) { return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
 
 function getDayStatus(key) {
   if (unavailableDates.includes(key)) return 'unavail';
@@ -471,20 +304,11 @@ function renderCalendar() {
   document.getElementById('month-title').textContent = `${MONTHS[viewMonth]} ${viewYear}`;
   const grid = document.getElementById('cal-grid');
   grid.innerHTML = '';
-  DAYS.forEach(d => {
-    const el = document.createElement('div');
-    el.className = 'cal-day-label';
-    el.textContent = d;
-    grid.appendChild(el);
-  });
+  DAYS.forEach(d => { const el = document.createElement('div'); el.className = 'cal-day-label'; el.textContent = d; grid.appendChild(el); });
   const first = new Date(viewYear, viewMonth, 1).getDay();
   const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
   const todayKey = dateKey(now.getFullYear(), now.getMonth(), now.getDate());
-  for (let i = 0; i < first; i++) {
-    const el = document.createElement('div');
-    el.className = 'cal-day empty';
-    grid.appendChild(el);
-  }
+  for (let i = 0; i < first; i++) { const el = document.createElement('div'); el.className = 'cal-day empty'; grid.appendChild(el); }
   for (let d = 1; d <= daysInMonth; d++) {
     const key = dateKey(viewYear, viewMonth, d);
     const status = getDayStatus(key);
@@ -519,29 +343,18 @@ async function submitRequest() {
   const guests = document.getElementById('f-guests').value;
   const msg = document.getElementById('form-msg');
   const btn = document.getElementById('submit-btn');
-
   if (!selectedDate) { msg.className = 'msg msg-error'; msg.textContent = 'Please select a date on the calendar first.'; return; }
   if (!name) { msg.className = 'msg msg-error'; msg.textContent = 'Please enter your name.'; return; }
   if (!phone) { msg.className = 'msg msg-error'; msg.textContent = 'Please enter your phone number.'; return; }
-
-  btn.disabled = true;
-  msg.className = 'msg';
-  msg.textContent = 'Submitting...';
-
+  btn.disabled = true; msg.className = 'msg'; msg.textContent = 'Submitting...';
   try {
     await sb('requests', { method: 'POST', prefer: 'return=minimal', body: { date: selectedDate, name, phone, guests, status: 'pending' } });
-    pendingDates.push(selectedDate);
-    selectedDate = null;
-    document.getElementById('f-name').value = '';
-    document.getElementById('f-phone').value = '';
+    pendingDates.push(selectedDate); selectedDate = null;
+    document.getElementById('f-name').value = ''; document.getElementById('f-phone').value = '';
     document.getElementById('selected-date-display').style.display = 'none';
-    msg.className = 'msg msg-success';
-    msg.textContent = 'Request sent! You will be texted when approved.';
+    msg.className = 'msg msg-success'; msg.textContent = 'Request sent! You will be texted when approved.';
     renderCalendar();
-  } catch (e) {
-    msg.className = 'msg msg-error';
-    msg.textContent = 'Error submitting. Please try again.';
-  }
+  } catch (e) { msg.className = 'msg msg-error'; msg.textContent = 'Error submitting. Please try again.'; }
   btn.disabled = false;
 }
 
@@ -552,30 +365,19 @@ async function loadRequests() {
     const requests = await sb('requests?select=*&order=created_at.desc');
     if (!requests.length) { el.innerHTML = '<div class="notice">No requests yet</div>'; return; }
     el.innerHTML = requests.map(r => {
-      const badgeClass = r.status === 'pending' ? 'badge-pending' : r.status === 'approved' ? 'badge-approved' : 'badge-declined';
+      const bc = r.status === 'pending' ? 'badge-pending' : r.status === 'approved' ? 'badge-approved' : 'badge-declined';
       const actions = r.status === 'pending'
-        ? `<button class="btn-sm btn-approve" onclick="updateRequest('${r.id}','approved')">Approve</button>
-           <button class="btn-sm btn-decline" onclick="updateRequest('${r.id}','declined')">Decline</button>`
+        ? `<button class="btn-sm btn-approve" onclick="updateRequest('${r.id}','approved')">Approve</button><button class="btn-sm btn-decline" onclick="updateRequest('${r.id}','declined')">Decline</button>`
         : '';
-      return `<div class="request-row">
-        <div>
-          <div class="req-name">${r.name} &mdash; ${r.date}</div>
-          <div class="req-meta">${r.guests} guest(s) &bull; ${r.phone}</div>
-          <span class="badge ${badgeClass}">${r.status}</span>
-        </div>
-        <div class="req-actions">${actions}</div>
-      </div>`;
+      return `<div class="request-row"><div><div class="req-name">${r.name} &mdash; ${r.date}</div><div class="req-meta">${r.guests} guest(s) &bull; ${r.phone}</div><span class="badge ${bc}">${r.status}</span></div><div class="req-actions">${actions}</div></div>`;
     }).join('');
-  } catch (e) {
-    el.innerHTML = '<div class="notice">Error loading requests.</div>';
-  }
+  } catch (e) { el.innerHTML = '<div class="notice">Error loading requests.</div>'; }
 }
 
 async function updateRequest(id, status) {
   try {
     await sb(`requests?id=eq.${id}`, { method: 'PATCH', prefer: 'return=minimal', body: { status } });
-    await loadData();
-    await loadRequests();
+    await loadData(); await loadRequests();
   } catch (e) { console.error(e); }
 }
 
@@ -585,23 +387,17 @@ async function addUnavailable() {
   if (!val) { msg.className = 'msg msg-error'; msg.textContent = 'Please pick a date.'; return; }
   try {
     await sb('unavailable_dates', { method: 'POST', prefer: 'return=minimal', body: { date: val } });
-    unavailableDates.push(val);
-    document.getElementById('unavail-date').value = '';
-    msg.className = 'msg msg-success';
-    msg.textContent = `${val} blocked.`;
+    unavailableDates.push(val); document.getElementById('unavail-date').value = '';
+    msg.className = 'msg msg-success'; msg.textContent = `${val} blocked.`;
     renderCalendar();
-  } catch (e) {
-    msg.className = 'msg msg-error';
-    msg.textContent = 'Could not block date. Already blocked?';
-  }
+  } catch (e) { msg.className = 'msg msg-error'; msg.textContent = 'Could not block date. Already blocked?'; }
 }
 
 function showTab(t) {
   document.getElementById('tab-calendar').style.display = t === 'calendar' ? '' : 'none';
   document.getElementById('tab-admin').style.display = t === 'admin' ? '' : 'none';
-  document.querySelectorAll('.tab').forEach((el, i) => {
-    el.classList.toggle('active', (i === 0 && t === 'calendar') || (i === 1 && t === 'admin'));
-  });
+  document.getElementById('tab-btn-calendar').classList.toggle('active', t === 'calendar');
+  if (isAdmin) document.getElementById('tab-btn-admin').classList.toggle('active', t === 'admin');
   if (t === 'admin') loadRequests();
 }
 
